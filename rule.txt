@@ -1,0 +1,63 @@
+﻿Yêu cầu các phần mềm
+NodeJS: https://nodejs.org/download/
+Web browser: Chrome, Firefox, Coccoc, …
+Visual studio C++ 2012-2019
+
+I. Luật chơi
+- Bạn sẽ là người lập trình chương trình AI_Tank để bắn phá tăng và trụ của team đối phương.
+- Bạn sẽ ngẫu nhiên vào một trong 2 đội chơi (Team_1 hoặc Team_2).
+- Cách dành chiến thắng tuyệt đối (áp dụng cho cả hiệp phụ lẫn hiệp chính):
+    + Phá hủy toàn bộ 4 xe tăng địch
+    + Phá hủy trụ chính
+- Xét đội chiến thắng khi kết thúc hiệp chính (Khi thời gian còn dưới 0 giây):
+    + Xét trụ phụ 2 đội. Nếu đội nào có trụ phụ nhiều hơn đội đó sẽ dành chiến thắng.
+- Xét tỉ số khi kết thúc hiệp phụ:
+    + Nếu đội nào có tăng nhiều hơn sẽ dành chiến thắng 
+
+II. Thể lệ
+- Kích thước bản đồ là 22 x 22. Biên giới của bản đồ đầy những chướng ngại không thể phá hủy để làm ranh giới.
+- Mỗi giây code sẽ được chạy 10 khung hình.
+- Do đó, bản đồ có thể phát được thực tế là 20 x 20, và bắt đầu từ 1 x 1.
+- Các tọa độ của mỗi đối tượng là điểm trung tâm của nó.
+- Điểm đầu tiên của bản đồ là x: 1, y: 1, ở phía trên bên trái của màn hình.
+- Xe tăng, cơ sở, chướng ngại vật là ô vuông.
+- Xe tăng và chướng ngại vật có kích thước 1 đơn vị ô, trong khi cơ sở có kích thước 2 x 2 ô.
+- Đạn chỉ là vật thể. Nó không có kích thước. Đạn chạm vào vật thể sẽ bị biến mất.
+- Xe tăng sẽ không thể di chuyển trong các trường hợp:
+    + Di chuyển ngoài vùng bản đồ.
+    + Vị trí di chuyển tiếp theo có xe tăng của địch.
+    + Di chuyển qua vùng có chướng ngại vật.
+    
+- Thời gian trò chơi: 150 giây (120 giây hiệp chính, 30 giây hiệp phụ)
+- Thời gian chơi bình thường: 2 phút 
+- Thời gian chơi hiệp phụ: 30 giây
+- Thời gian xuất hiện các loại bom: 30s/lần. Khi đạt tối đa 3 quả bom trên bản đồ thì bom sẽ không xuất hiện nữa.
+
+- Những trở ngại phá hoại HP: 100.
+- Cơ sở chính có HP: 300.
+- Cơ sở phụ có HP: 200. 
+
+- Sát thương bom nổ: 60.
+- Tầm ảnh hưởng bom nổ: 3 đơn vị. (ảnh hưởng tới trụ) (vị trí chính giữa sẽ nhận nhiều sát thương hơn)
+- Bom điện tử làm choáng: 40 vòng code hay 4 giây.
+- Tầm ảnh hưởng bom điện tử: 3 đơn vị. (ảnh hưởng tới trụ) (vị trí chính giữa sẽ nhận nhiều choáng hơn)
+- Boom sẽ được thả sau khoảng 1 giây sử dụng.
+
+- Tăng hạng nhẹ:
+    + Máu: 80
+    + Sát thương 1 viên: 40
+    + Tốc độ bắn đạn trên giây: 20 vòng code (hoặc 2 giây)
+    + Tốc độ di chuyển: 0.5 đơn vị/vòng code.
+    + Tốc độ đạn di chuyển: 1 đơn vị/vòng code.
+- Tăng hạng trung:
+    + Máu: 100
+    + Sát thương 1 viên: 30
+    + Tốc độ bắn đạn trên giây: 12 vòng code (hoặc 1.2 giây)
+    + Tốc độ di chuyển: 0.25 đơn vị/vòng code.
+    + Tốc độ đạn di chuyển: 1 đơn vị/vòng code.
+- Tăng hạng nặng:
+    + Máu: 150
+    + Sát thương 1 viên: 8
+    + Tốc độ bắn đạn trên giây: 2 vòng code (hoặc 0.2 giây)
+    + Tốc độ di chuyển: 0.2 đơn vị/vòng code.
+    + Tốc độ đạn di chuyển: 0.8 đơn vị/vòng code.

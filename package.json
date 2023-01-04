@@ -1,0 +1,21 @@
+{
+  "name": "ai-tank-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install:web": "cd aitank_webserver && npm install",
+    "install:game": "cd aitank_gameserver && npm install",
+    "start:web": "cd aitank_webserver && npm run start",
+    "start:game": "cd aitank_gameserver && npm run start",
+    "data:import": "cd aitank_webserver && npm run data:import",
+    "data:export": "cd aitank_webserver && npm run data:export",
+    "data:delete": "cd aitank_webserver && npm run data:delete",
+    "backup": "node data.js -backup",
+    "clear": "node data.js -clear"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "rimraf": "^3.0.2"
+  }
+}

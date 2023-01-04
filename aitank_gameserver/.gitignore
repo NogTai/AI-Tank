@@ -1,0 +1,10 @@
+node_modules/
+
+Pack/Server/Replay/*
+!Pack/Server/Replay/.gitkeep
+
+Pack/Server/Result/*
+!Pack/Server/Result/.gitkeep
+
+Bots/*
+!Bots/.gitkeep
